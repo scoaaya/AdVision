@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdVision | Campanhas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <span>AdVision</span>
+        </div>
+
+        <nav class="menu">
+            <a class="menu-item" href="index.html">⌂ <span>Dashboard</span></a>
+            <a class="menu-item active" href="campanhas.html">▣ <span>Campanhas</span></a>
+            <a class="menu-item" href="#criativos">◇ <span>Criativos</span></a>
+            <a class="menu-item" href="#analises">◉ <span>Análises</span></a>
+            <a class="menu-item" href="#calculadora">＋ <span>Calculadora</span></a>
+        </nav>
+
+        <div class="profile">
+            <div class="avatar">K</div>
+            <div>
+                <strong>Gestor de Tráfego</strong>
+                <small>Performance Ads</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">GESTÃO</span>
+                <h1>Campanhas</h1>
+                <p>Analise e acompanhe todas as suas campanhas.</p>
+            </div>
+
+            <button class="primary-btn" onclick="abrirNovaCampanha()">
+                + Nova campanha
+            </button>
+        </header>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <span>Campanhas ativas</span>
+                <strong id="totalCampanhas">3</strong>
+                <small class="positive-text">Operando normalmente</small>
+            </article>
+
+            <article class="summary-card">
+                <span>Investimento total</span>
+                <strong id="totalInvestimento">R$ 6.920,00</strong>
+                <small>Últimos 30 dias</small>
+            </article>
+
+            <article class="summary-card">
+                <span>Total de leads</span>
+                <strong id="totalLeads">347</strong>
+                <small class="positive-text">↑ Boa geração de leads</small>
+            </article>
+
+            <article class="summary-card">
+                <span>CPL médio</span>
+                <strong id="cplMedio">R$ 19,94</strong>
+                <small>Média das campanhas</small>
+            </article>
+        </section>
+
+        <section class="campaign-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Todas as campanhas</h2>
+                    <p>Compare resultados e encontre oportunidades.</p>
+                </div>
+
+                <div class="filters">
+                    <input
+                        type="text"
+                        id="buscarCampanha"
+                        placeholder="Buscar campanha..."
+                        oninput="buscarCampanhas()"
+                    >
+
+                    <select id="filtroStatus" onchange="buscarCampanhas()">
+                        <option value="todos">Todos</option>
+                        <option value="ativa">Ativas</option>
+                        <option value="atencao">Atenção</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="tabelaCampanhas">
+                    <thead>
+                        <tr>
+                            <th>Campanha</th>
+                            <th>Status</th>
+                            <th>Investimento</th>
+                            <th>Leads</th>
+                            <th>CPL</th>
+                            <th>CTR</th>
+                            <th>ROAS</th>
+                            <th>AdVision Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="campaign-row" data-status="ativa" data-nome="Remarketing | 30D" data-objetivo="Vendas" data-investimento="1940" data-leads="118" data-ctr="3.47" data-roas="5.8">
+                            <td><strong>Remarketing | 30D</strong><small>Vendas</small></td>
+                            <td><span class="status active-status">Ativa</span></td>
+                            <td>R$ 1.940,00</td>
+                            <td>118</td>
+                            <td>R$ 16,44</td>
+                            <td>3,47%</td>
+                            <td class="roas">5,8x</td>
+                            <td><div class="score excellent">92</div></td>
+                        </tr>
+
+                        <tr class="campaign-row" data-status="ativa" data-nome="Captação | Julho" data-objetivo="Conversões" data-investimento="2850" data-leads="142" data-ctr="2.91" data-roas="4.2">
+                            <td><strong>Captação | Julho</strong><small>Conversões</small></td>
+                            <td><span class="status active-status">Ativa</span></td>
+                            <td>R$ 2.850,00</td>
+                            <td>142</td>
+                            <td>R$ 20,07</td>
+                            <td>2,91%</td>
+                            <td class="roas">4,2x</td>
+                            <td><div class="score good-score">84</div></td>
+                        </tr>
+
+                        <tr class="campaign-row" data-status="atencao" data-nome="Lookalike | Leads" data-objetivo="Conversões" data-investimento="2130" data-leads="87" data-ctr="1.89" data-roas="2.7">
+                            <td><strong>Lookalike | Leads</strong><small>Conversões</small></td>
+                            <td><span class="status warning-status">Atenção</span></td>
+                            <td>R$ 2.130,00</td>
+                            <td>87</td>
+                            <td>R$ 24,48</td>
+                            <td>1,89%</td>
+                            <td class="roas">2,7x</td>
+                            <td><div class="score warning-score">61</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal: detalhes -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content details-modal">
+            <button class="close-modal" onclick="fecharDetalhes()">×</button>
+
+            <span class="eyebrow">ANÁLISE DE PERFORMANCE</span>
+            <h2 id="detailName">Campanha</h2>
+
+            <div class="score-hero">
+                <span>AdVision Score</span>
+                <strong id="detailScore">0</strong>
+                <p id="scoreLabel">Performance</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div><span>Investimento</span><strong id="detailInvestment">R$ 0,00</strong></div>
+                <div><span>Leads</span><strong id="detailLeads">0</strong></div>
+                <div><span>CPL</span><strong id="detailCpl">R$ 0,00</strong></div>
+                <div><span>CTR</span><strong id="detailCtr">0%</strong></div>
+                <div><span>ROAS</span><strong id="detailRoas">0x</strong></div>
+            </div>
+
+            <h3>Diagnóstico</h3>
+            <div id="diagnosticContent" class="diagnostic-list"></div>
+        </div>
+    </div>
+
+    <!-- Modal: nova campanha -->
+    <div class="modal" id="newCampaignModal">
+        <div class="modal-content new-campaign-modal">
+            <button class="close-modal" onclick="fecharNovaCampanha()">×</button>
+
+            <span class="eyebrow">NOVA CAMPANHA</span>
+            <h2>Cadastrar campanha</h2>
+
+            <form id="newCampaignForm">
+                <label>
+                    Nome da campanha
+                    <input id="newName" type="text" placeholder="Ex: Black Friday | Leads" required>
+                </label>
+
+                <label>
+                    Objetivo
+                    <select id="newObjective">
+                        <option>Vendas</option>
+                        <option>Conversões</option>
+                        <option>Leads</option>
+                        <option>Tráfego</option>
+                    </select>
+                </label>
+
+                <label>
+                    Investimento (R$)
+                    <input id="newInvestment" type="number" min="0" step="0.01" placeholder="Ex: 1500" required>
+                </label>
+
+                <label>
+                    Leads
+                    <input id="newLeads" type="number" min="0" step="1" placeholder="Ex: 80" required>
+                </label>
+
+                <label>
+                    CTR (%)
+                    <input id="newCtr" type="number" min="0" step="0.01" placeholder="Ex: 2.5" required>
+                </label>
+
+                <label>
+                    ROAS
+                    <input id="newRoas" type="number" min="0" step="0.1" placeholder="Ex: 4.2" required>
+                </label>
+
+                <button class="primary-btn full-btn" type="submit">Salvar campanha</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="campanhas.js"></script>
+</body>
+</html>
