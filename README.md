@@ -100,3 +100,9 @@ A partir desses dados, a campanha recebe uma classificação visual e um diagnó
 **Katrini Santos**
 
 Projeto desenvolvido como prática de front-end e JavaScript, combinando desenvolvimento web com análise de métricas de performance em campanhas digitais.
+
+## Acesse o projeto
+
+Você pode visualizar o projeto online aqui:
+
+[Acessar AdVision](https://scoaaya.github.io/AdVision/campanhas.html)
