@@ -4,6 +4,8 @@ const modalDetalhes = document.getElementById("detailsModal");
 const modalNovaCampanha = document.getElementById("newCampaignModal");
 const formularioNovaCampanha = document.getElementById("newCampaignForm");
 const tabela = document.querySelector("#tabelaCampanhas tbody");
+const limparFiltros = document.getElementById("limparFiltros");
+const emptyState = document.getElementById("emptyState");
 
 const campanhasBase = Array.from(
     document.querySelectorAll(".campaign-row")
@@ -251,6 +253,13 @@ function atualizarResumo() {
     document.getElementById("cplMedio").innerText = formatarDinheiro(cplMedio);
 }
 
+function atualizarEstadoVazio() {
+    const linhas = [...document.querySelectorAll(".campaign-row")];
+    const visiveis = linhas.filter(linha => linha.style.display !== "none");
+
+    emptyState.style.display = visiveis.length ? "none" : "block";
+}
+
 function buscarCampanhas() {
     const busca = document
         .getElementById("buscarCampanha")
@@ -271,6 +280,8 @@ function buscarCampanhas() {
         linha.style.display =
             correspondeNome && correspondeStatus ? "" : "none";
     });
+
+    atualizarEstadoVazio();
 }
 
 function obterCampanhasSalvas() {
@@ -333,6 +344,12 @@ document.querySelectorAll(".campaign-row").forEach(linha => {
             Number(linha.dataset.roas)
         );
     });
+});
+
+limparFiltros.addEventListener("click", () => {
+    document.getElementById("buscarCampanha").value = "";
+    document.getElementById("filtroStatus").value = "todos";
+    buscarCampanhas();
 });
 
 carregarCampanhasSalvas();

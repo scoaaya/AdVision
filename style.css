@@ -490,6 +490,42 @@ td small {
     margin-top: 22px;
 }
 
+.secondary-btn {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: var(--panel-dark);
+    color: var(--text);
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    border-color: var(--purple);
+    color: var(--purple-soft);
+}
+
+.empty-state {
+    margin-top: 14px;
+    padding: 28px;
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    background: var(--panel-dark);
+}
+
+.empty-state strong {
+    display: block;
+    font-size: 14px;
+}
+
+.empty-state p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
 @media (max-width: 1000px) {
     .summary-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -497,6 +533,13 @@ td small {
 
     .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .creative-form,
+    .creative-grid {
+        grid-template-columns: 1fr;
     }
 }
 
