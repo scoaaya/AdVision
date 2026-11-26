@@ -545,3 +545,56 @@ td small {
         width: 100%;
     }
 }
+
+
+/* ===== Calculadora de métricas ===== */
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.calculator-grid label {
+    color: var(--muted);
+    font-size: 11px;
+    display: grid;
+    gap: 7px;
+}
+
+.calculator-error {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(201, 158, 65, .4);
+    border-radius: 8px;
+    background: rgba(201, 158, 65, .1);
+    color: var(--yellow);
+    font-size: 12px;
+}
+
+.calculator-result {
+    margin-top: 18px;
+}
+
+.score-hero .calculator-score {
+    background: transparent;
+}
+
+.score-hero .calculator-score.excellent {
+    color: var(--green);
+}
+
+.score-hero .calculator-score.good-score {
+    color: var(--purple-soft);
+}
+
+.score-hero .calculator-score.warning-score {
+    color: var(--yellow);
+}
+
+@media (max-width: 900px) {
+    .calculator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

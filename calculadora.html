@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdVision | Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <span>AdVision</span>
+        </div>
+
+        <nav class="menu">
+            <a class="menu-item" href="index.html">⌂ <span>Dashboard</span></a>
+            <a class="menu-item" href="campanhas.html">▣ <span>Campanhas</span></a>
+            <a class="menu-item" href="criativos.html">◇ <span>Criativos</span></a>
+            <a class="menu-item" href="analises.html">◉ <span>Análises</span></a>
+            <a class="menu-item active" href="calculadora.html">＋ <span>Calculadora</span></a>
+        </nav>
+
+        <div class="profile">
+            <div class="avatar">K</div>
+            <div>
+                <strong>Gestor de Tráfego</strong>
+                <small>Performance Ads</small>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">ANÁLISE</span>
+                <h1>Calculadora</h1>
+                <p>Calcule rapidamente os principais indicadores de uma campanha.</p>
+            </div>
+        </header>
+
+        <section class="campaign-panel">
+            <form id="calculatorForm" novalidate>
+                <div class="calculator-grid">
+                    <label>
+                        Investimento (R$)
+                        <input id="investimento" type="number" min="0" step="0.01" placeholder="Ex: 1000">
+                    </label>
+
+                    <label>
+                        Leads
+                        <input id="leads" type="number" min="0" step="1" placeholder="Ex: 50">
+                    </label>
+
+                    <label>
+                        Cliques
+                        <input id="cliques" type="number" min="0" step="1" placeholder="Ex: 50">
+                    </label>
+
+                    <label>
+                        Impressões
+                        <input id="impressoes" type="number" min="0" step="1" placeholder="Ex: 1000">
+                    </label>
+
+                    <label>
+                        Receita (R$)
+                        <input id="receita" type="number" min="0" step="0.01" placeholder="Ex: 4000">
+                    </label>
+                </div>
+
+                <p id="erroCalculadora" class="calculator-error" style="display:none;"></p>
+
+                <button id="calcularBtn" class="primary-btn full-btn" type="submit">
+                    Calcular indicadores
+                </button>
+            </form>
+
+            <div id="resultadoCalculadora" class="metrics-grid calculator-result" style="display:none;"></div>
+            <div id="scoreCalculadora" class="score-hero" style="display:none;"></div>
+        </section>
+    </main>
+
+    <script src="calculadora.js"></script>
+</body>
+</html>
