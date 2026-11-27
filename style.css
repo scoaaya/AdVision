@@ -545,3 +545,60 @@ td small {
         width: 100%;
     }
 }
+/* =====================================
+   PAINEL DE ANÁLISES
+===================================== */
+
+.analysis-list {
+    display: grid;
+    gap: 12px;
+}
+
+.analysis-card {
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--panel-dark);
+}
+
+.analysis-card h3 {
+    margin: 7px 0 5px;
+}
+
+.analysis-card p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.analysis-score {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: var(--purple-soft);
+    background: rgba(118, 89, 232, .18);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.recommendation {
+    grid-column: 1 / -1;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* Responsividade */
+
+@media (max-width: 720px) {
+
+    .analysis-card {
+        grid-template-columns: 1fr;
+    }
+
+}

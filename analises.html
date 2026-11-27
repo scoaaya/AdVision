@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdVision | Análises</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <span>AdVision</span>
+        </div>
+
+        <nav class="menu">
+
+            <a class="menu-item" href="index.html">
+                ⌂ <span>Dashboard</span>
+            </a>
+
+            <a class="menu-item" href="campanhas.html">
+                ▣ <span>Campanhas</span>
+            </a>
+
+            <a class="menu-item" href="criativos.html">
+                ◇ <span>Criativos</span>
+            </a>
+
+            <a class="menu-item active" href="analises.html">
+                ◉ <span>Análises</span>
+            </a>
+
+            <a class="menu-item" href="calculadora.html">
+                ＋ <span>Calculadora</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">PERFORMANCE</span>
+                <h1>Análises</h1>
+                <p>Uma leitura consolidada das campanhas cadastradas.</p>
+            </div>
+        </header>
+
+        <section class="summary-grid" id="analysisSummary">
+        </section>
+
+        <section class="campaign-panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Diagnóstico das campanhas</h2>
+                    <p>Identifique rapidamente onde agir primeiro.</p>
+                </div>
+            </div>
+
+            <div id="analysisList" class="analysis-list"></div>
+
+        </section>
+
+    </main>
+
+    <script src="analises.js"></script>
+
+</body>
+</html>
