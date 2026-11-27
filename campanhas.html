@@ -17,7 +17,7 @@
         <nav class="menu">
             <a class="menu-item" href="index.html">⌂ <span>Dashboard</span></a>
             <a class="menu-item active" href="campanhas.html">▣ <span>Campanhas</span></a>
-            <a class="menu-item" href="#criativos">◇ <span>Criativos</span></a>
+            <a class="menu-item" href="criativos.html">◇ <span>Criativos</span></a>
             <a class="menu-item" href="#analises">◉ <span>Análises</span></a>
             <a class="menu-item" href="#calculadora">＋ <span>Calculadora</span></a>
         </nav>
@@ -90,6 +90,10 @@
                         <option value="ativa">Ativas</option>
                         <option value="atencao">Atenção</option>
                     </select>
+
+                    <button class="secondary-btn" id="limparFiltros" type="button">
+                        Limpar filtros
+                    </button>
                 </div>
             </div>
 
@@ -143,6 +147,11 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display:none;">
+                <strong>Nenhuma campanha encontrada</strong>
+                <p>Tente outro nome ou limpe os filtros para visualizar todas as campanhas.</p>
             </div>
         </section>
     </main>

@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AdVision | Criativos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+            <span>AdVision</span>
+        </div>
+
+        <nav class="menu">
+            <a class="menu-item" href="index.html">
+                ⌂ <span>Dashboard</span>
+            </a>
+
+            <a class="menu-item" href="campanhas.html">
+                ▣ <span>Campanhas</span>
+            </a>
+
+            <a class="menu-item active" href="criativos.html">
+                ◇ <span>Criativos</span>
+            </a>
+
+            <a class="menu-item" href="#analises">
+                ◉ <span>Análises</span>
+            </a>
+
+            <a class="menu-item" href="#calculadora">
+                ＋ <span>Calculadora</span>
+            </a>
+        </nav>
+
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main">
+
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">GESTÃO</span>
+
+                <h1>Criativos</h1>
+
+                <p>
+                    Organize os criativos utilizados nas campanhas.
+                </p>
+            </div>
+        </header>
+
+        <!-- Área de cadastro e listagem -->
+        <section class="campaign-panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Cadastrar criativo</h2>
+
+                    <p>
+                        Adicione e organize os materiais utilizados
+                        nas suas campanhas.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulário -->
+            <form id="creativeForm" class="creative-form">
+
+                <label>
+                    Nome do criativo
+
+                    <input
+                        type="text"
+                        id="creativeName"
+                        placeholder="Ex: Anúncio Black Friday"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Formato
+
+                    <select id="creativeFormat" required>
+                        <option value="Imagem">Imagem</option>
+                        <option value="Vídeo">Vídeo</option>
+                        <option value="Carrossel">Carrossel</option>
+                    </select>
+                </label>
+
+                <label>
+                    Campanha relacionada
+
+                    <input
+                        type="text"
+                        id="creativeCampaign"
+                        placeholder="Ex: Black Friday"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Status
+
+                    <select id="creativeStatus" required>
+                        <option value="Ativo">Ativo</option>
+                        <option value="Em teste">Em teste</option>
+                        <option value="Desativado">Desativado</option>
+                    </select>
+                </label>
+
+                <button
+                    class="primary-btn creative-submit"
+                    type="submit"
+                >
+                    + Adicionar criativo
+                </button>
+
+            </form>
+
+            <!-- Listagem dos criativos -->
+            <div class="creative-section">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Criativos cadastrados</h2>
+
+                        <p>
+                            Visualize os materiais registrados no sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    id="creativeList"
+                    class="creative-grid"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="criativos.js"></script>
+
+</body>
+</html>
