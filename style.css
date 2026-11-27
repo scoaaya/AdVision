@@ -588,3 +588,36 @@ td small {
         width: 100%;
     }
 }
+
+.creative-form {
+ display: grid;
+ grid-template-columns: 1.4fr .8fr 1.3fr .8fr auto;
+ gap: 10px;
+ margin-bottom: 20px;
+}
+.creative-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 12px;
+}
+.creative-card {
+ padding: 18px;
+ border: 1px solid var(--border);
+ border-radius: 10px;
+ background: var(--panel-dark);
+}
+.creative-card h3 {
+ margin: 8px 0 6px;
+}
+.creative-card p {
+ color: var(--muted);
+ font-size: 11px;
+ margin-bottom: 14px;
+}
+@media (max-width: 900px) {
+ .creative-form,
+ .creative-grid {
+ grid-template-columns: 1fr;
+ }
+}
+
